@@ -1,2 +1,3 @@
 # bookbot
-Python Project - Booted - Book Analysis
+
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
