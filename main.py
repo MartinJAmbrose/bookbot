@@ -1,13 +1,22 @@
 # New Main with import
 from stats import count_words, count_characters, sort_characters
+import sys
 
 def get_book_text(filepath_name):
     with open(filepath_name) as f:
-#        file_contents = f.read()
+#       file_contents = f.read()
         return f.read()
 
 def main():
-    text = get_book_text("/Users/martinambrose/workspace/github.com/martinjambrose/bookbot/books/frankenstein.txt")
+ 
+    if len(sys.argv) != 2:
+        usage = "'Usage: python3 main.py <path_to_book>'"
+        print(usage)
+        return {usage, exit(1)}
+        sys.exit(1)
+
+    text = get_book_text(sys.argv[1])
+#    text = get_book_text("/Users/martinambrose/workspace/github.com/martinjambrose/bookbot/books/frankenstein.txt")
     
     num_words = count_words(text)
     char_counts = count_characters(text)
